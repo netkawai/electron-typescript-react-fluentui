@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "target": "ES2019",
+      "module": "commonJS",
+      "outDir": "./dist",
+      "sourceMap": true,
+      "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
+      "skipLibCheck": true                      // Skip type checking of all declaration files (*.d.ts). Good for development compile speed, but worth disabling for release.  
+    }
+}
