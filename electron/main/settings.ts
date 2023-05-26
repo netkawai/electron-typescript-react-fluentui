@@ -1,10 +1,9 @@
-import Store = require("electron-store")
+import Store  from "electron-store"
+
 import {
     SchemaTypes,
     ViewType,
     ThemeSettings,
-    SyncService,
-    ServiceConfigs,
     ViewConfigs,
 } from "../../src/schema-types"
 import { ipcMain, session, nativeTheme, app } from "electron"
@@ -137,24 +136,6 @@ ipcMain.handle("set-fetch-interval", (_, interval: number) => {
     store.set(FETCH_INTEVAL_STORE_KEY, interval)
 })
 
-
-const SERVICE_CONFIGS_STORE_KEY = "serviceConfigs"
-ipcMain.on("get-service-configs", event => {
-    event.returnValue = store.get(SERVICE_CONFIGS_STORE_KEY, {
-        type: SyncService.None,
-    })
-})
-ipcMain.handle("set-service-configs", (_, configs: ServiceConfigs) => {
-    store.set(SERVICE_CONFIGS_STORE_KEY, configs)
-})
-
-const FILTER_TYPE_STORE_KEY = "filterType"
-ipcMain.on("get-filter-type", event => {
-    event.returnValue = store.get(FILTER_TYPE_STORE_KEY, null)
-})
-ipcMain.handle("set-filter-type", (_, filterType: number) => {
-    store.set(FILTER_TYPE_STORE_KEY, filterType)
-})
 
 const LIST_CONFIGS_STORE_KEY = "listViewConfigs"
 ipcMain.on("get-view-configs", (event, view: ViewType) => {

@@ -1,7 +1,6 @@
 import { app, ipcMain, Menu, nativeTheme } from "electron"
 import { ThemeSettings, SchemaTypes } from "../src/schema-types"
 import { store } from "./main/settings"
-import performUpdate from "./main/update-scripts"
 import { WindowManager } from "./main/window"
 
 if (!process.mas) {
@@ -13,12 +12,11 @@ if (!process.mas) {
 
 if (!app.isPackaged) app.setAppUserModelId(process.execPath)
 else if (process.platform === "win32")
-    app.setAppUserModelId("me.netkawai.mybookmakrs")
+    app.setAppUserModelId("me.netkawai.electron-fluent-ui")
 
 let restarting = false
 
 function init() {
-    performUpdate(store)
     nativeTheme.themeSource = store.get("theme", ThemeSettings.Default)
 }
 
@@ -120,19 +118,3 @@ app.on("window-all-closed", () => {
     }
 })
 
-ipcMain.handle("import-all-settings", (_, configs: SchemaTypes) => {
-    restarting = true
-    store.clear()
-    for (let [key, value] of Object.entries(configs)) {
-        // @ts-ignore
-        store.set(key, value)
-    }
-    performUpdate(store)
-    nativeTheme.themeSource = store.get("theme", ThemeSettings.Default)
-    setTimeout(
-        () => {
-            winManager.mainWindow.close()
-        },
-        process.platform === "darwin" ? 1000 : 0
-    ) // Why ???
-})

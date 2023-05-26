@@ -179,7 +179,6 @@ const utilsBridge = {
 declare global {
     interface Window {
         utils: typeof utilsBridge
-        fontList: Array<string>
     }
 }
 

@@ -30,16 +30,6 @@ export const enum ImageCallbackTypes {
     CopyLink,
 }
 
-export const enum SyncService {
-    None,
-	Getpocket,
-	Webarchive,
-}
-export interface ServiceConfigs {
-    type: SyncService
-    importGroups?: boolean
-}
-
 export const enum WindowStateListenerType {
     Maximized,
     Focused,
@@ -64,9 +54,5 @@ export type SchemaTypes = {
     fontSize: number
     fontFamily: string
     menuOn: boolean
-    fetchInterval: number
-    serviceConfigs: ServiceConfigs
-    filterType: number
     listViewConfigs: ViewConfigs
-    useNeDB: boolean
 }

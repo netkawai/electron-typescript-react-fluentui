@@ -43,7 +43,7 @@ export class WindowManager {
     createWindow = () => {
         if (!this.hasWindow()) {
             this.mainWindow = new BrowserWindow({
-                title: "My Bookmarks",
+                title: "electron-fluent-ui",
                 backgroundColor:
                     process.platform === "darwin"
                         ? "#00000000"

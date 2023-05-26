@@ -1,7 +1,6 @@
 import {
     ViewType,
     ThemeSettings,
-    ServiceConfigs,
     ViewConfigs,
 } from "../../src/schema-types"
 import { ipcRenderer } from "electron"
@@ -74,27 +73,6 @@ const settingsBridge = {
         ipcRenderer.invoke("set-font", font)
     },
 
-    getFetchInterval: (): number => {
-        return ipcRenderer.sendSync("get-fetch-interval")
-    },
-    setFetchInterval: (interval: number) => {
-        ipcRenderer.invoke("set-fetch-interval", interval)
-    },
-
-
-    getServiceConfigs: (): ServiceConfigs => {
-        return ipcRenderer.sendSync("get-service-configs")
-    },
-    setServiceConfigs: (configs: ServiceConfigs) => {
-        ipcRenderer.invoke("set-service-configs", configs)
-    },
-
-    getFilterType: (): number => {
-        return ipcRenderer.sendSync("get-filter-type")
-    },
-    setFilterType: (filterType: number) => {
-        ipcRenderer.invoke("set-filter-type", filterType)
-    },
 
     getViewConfigs: (view: ViewType): ViewConfigs => {
         return ipcRenderer.sendSync("get-view-configs", view)
@@ -103,12 +81,6 @@ const settingsBridge = {
         ipcRenderer.invoke("set-view-configs", view, configs)
     },
 
-    getNeDBStatus: (): boolean => {
-        return ipcRenderer.sendSync("get-nedb-status")
-    },
-    setNeDBStatus: (flag: boolean) => {
-        ipcRenderer.invoke("set-nedb-status", flag)
-    },
 
     getAll: () => {
         return ipcRenderer.sendSync("get-all-settings") as Object
