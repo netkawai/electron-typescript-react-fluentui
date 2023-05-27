@@ -1,17 +1,18 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
+import {createRoot} from "react-dom/client"
 import Root from "./root"
 
-ReactDOM.render(
-    <Root />,
-    document.getElementById("app")
-)
+import { initializeIcons } from "@fluentui/react/lib/Icons"
 
-/*
-ReactDOM.render(
-    <Provider store={store}>
-        <Root />
-    </Provider>,
-    document.getElementById("app")
+initializeIcons("icons/")
+
+const top_root = createRoot(
+    document.getElementById('app') as HTMLElement
 )
-*/
+top_root.render(
+    <React.StrictMode>
+      <Root />
+    </React.StrictMode>
+  );
+
