@@ -30,6 +30,7 @@ module.exports = [
         plugins: [
 			new CopyWebpackPlugin(
 			{patterns:[
+            { from: 'node_modules/@fluentui/font-icons-mdl2/fonts', to: 'icons' },
 			{ from: 'styles', to: '.' },
 			]}),
 		]
