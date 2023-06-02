@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Icon } from "@fluentui/react/lib/Icon"
-import { AppState } from "./model/app"
+import { AppState } from "../model/app"
 import { ProgressIndicator, IObjectWithKey } from "@fluentui/react"
-import { WindowStateListenerType } from "./schema-types"
+import { WindowStateListenerType } from "../schema-types"
 import { useTranslation } from "react-i18next"
 type NavProps = {
     state: AppState

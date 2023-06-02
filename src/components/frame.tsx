@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import Nav from './nav'
-import { AppState} from './model/app'
+import { AppState} from '../model/app'
 
-const Root: FC = () => {
+const Frame: FC = () => {
    return(
     <>
     <div id="root">
@@ -25,4 +25,4 @@ const Root: FC = () => {
        </>
    ) 
 }
-export default Root
+export default Frame
