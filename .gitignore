@@ -91,7 +91,6 @@ iOSInjectionProject/
 
 # for node
 .idea/
-.vscode/
 node_modules/
 build
 .DS_Store
