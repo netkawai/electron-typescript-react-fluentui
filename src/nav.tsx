@@ -144,7 +144,7 @@ const Nav = (props: NavProps) => {
                 <span className="title">{props.state.title}</span>
                 <div className="btn-group" style={{ float: "right" }}>
 					{}
-                    <span className="seperator"></span>
+                    <span className="separator"></span>
                     <a
                         className="btn system"
                         title={t("nav.minimize")}

@@ -207,7 +207,7 @@ body.darwin #root > nav span.title {
     user-select: none;
     -webkit-app-region: none;
 }
-.btn-group .seperator {
+git .btn-group .separator {
     display: inline-block;
     width: var(--navHeight);
     font-size: 12px;
@@ -215,10 +215,10 @@ body.darwin #root > nav span.title {
     text-align: center;
     vertical-align: middle;
 }
-body.darwin .btn-group .seperator {
+body.darwin .btn-group .separator {
     display: none;
 }
-.btn-group .seperator::before {
+.btn-group .separator::before {
     content: "|";
 }
 .btn-group .btn {
