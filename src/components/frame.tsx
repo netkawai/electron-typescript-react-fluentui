@@ -1,13 +1,13 @@
-import { FC } from 'react'
-import Nav from './nav'
+import * as React from 'react'
+import ChromeMenu from './ChromeMenu'
 import { AppState} from '../model/app'
-import { ButtonDefaultExample } from './buttons'
+import { ButtonDefaultExample } from './ButtonDefaultExample'
 
-const Frame: FC = () => {
+const Frame: React.FunctionComponent = () => {
    return(
     <>
     <div id="root">
-    <Nav state={new AppState} itemShown={false} menu={function (): void {
+    <ChromeMenu state={new AppState} itemShown={false} menu={function (): void {
            throw new Error('Function not implemented.')
        } } search={function (): void {
            throw new Error('Function not implemented.')

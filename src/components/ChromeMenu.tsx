@@ -17,7 +17,7 @@ type NavProps = {
 }
 
 
-const Nav = (props: NavProps) => {
+const ChromeMenu = (props: NavProps) => {
 
     const {t} = useTranslation()
 
@@ -100,7 +100,6 @@ const Nav = (props: NavProps) => {
         props.state.feedInit &&
         !props.state.syncing &&
         !props.state.fetchingItems
-    const fetching = () => (!canFetch() ? " fetching" : "")
     const getClassNames = () => {
         const classNames = new Array<string>()
         if (props.state.settings.display) classNames.push("hide-btns")
@@ -186,4 +185,4 @@ const Nav = (props: NavProps) => {
         )
 }
 
-export default Nav
+export default ChromeMenu

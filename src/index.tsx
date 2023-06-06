@@ -1,6 +1,6 @@
 import * as React from "react"
 import {createRoot} from "react-dom/client"
-import Frame from "./components/frame"
+import Frame from "./components/Frame"
 import { ThemeProvider } from "@fluentui/react"
 import { initializeIcons } from "@fluentui/react/lib/Icons"
 
