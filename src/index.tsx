@@ -9,6 +9,7 @@ initializeIcons("icons/")
 const root = createRoot(
     document.getElementById('app') as HTMLElement
 )
+
 root.render(
     <React.StrictMode>
       <ThemeProvider>
@@ -17,3 +18,4 @@ root.render(
     </React.StrictMode>
   );
 
+  document.body.classList.add(window.utils.platform)
