@@ -4,8 +4,10 @@
   "description": "",
   "scripts": {
     "build": "webpack --config ./webpack.config.js",
+    "electronLinux" : "electron ./dist/electron.js --enable-features=UseOzonePlatform --ozone-platform=wayland --ozone-platform-hint=auto",
     "electron": "electron  ./dist/electron.js",
     "start": "npm run build && npm run electron",
+    "startLinux" : "npm run build && npm run electronLinux",
     "format": "prettier --write ."
   },
   "keywords": [],
